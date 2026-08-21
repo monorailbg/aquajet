@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #12151e;
+  --background-elevated: #171b26;
+  --foreground: #e9edf3;
+  --muted: #93a0b4;
+  --accent: #29e5ff;
+  --accent-dim: #1aa9c2;
+  --border: #262c3b;
+  --steel: #8b95a5;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-elevated: var(--background-elevated);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-border: var(--border);
+  --color-steel: var(--steel);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.glow-on-hover {
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+}
+
+.glow-on-hover:hover {
+  box-shadow: 0 0 24px 0 rgba(41, 229, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.card-hover {
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card-hover:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -12px rgba(41, 229, 255, 0.25);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(139, 149, 165, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 149, 165, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
