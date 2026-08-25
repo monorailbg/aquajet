@@ -2,6 +2,7 @@
 
 import { UploadCloud, FileCheck2, PackageCheck } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
+import Reveal from "@/components/Reveal";
 
 const icons = [UploadCloud, FileCheck2, PackageCheck];
 
@@ -11,12 +12,14 @@ export default function ProcessSteps() {
   return (
     <section className="border-b border-border">
       <div className="mx-auto max-w-6xl px-6 py-24">
-        <p className="text-sm font-semibold tracking-widest text-accent uppercase">
-          {t.process.eyebrow}
-        </p>
-        <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-          {t.process.title}
-        </h2>
+        <Reveal>
+          <p className="text-sm font-semibold tracking-widest text-accent uppercase">
+            {t.process.eyebrow}
+          </p>
+          <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight break-words sm:text-4xl">
+            {t.process.title}
+          </h2>
+        </Reveal>
 
         <div className="relative mt-14 grid gap-10 sm:grid-cols-3">
           <div

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Layers } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
+import Reveal from "@/components/Reveal";
 
 export default function MaterialFinder() {
   const { t } = useLanguage();
@@ -12,13 +13,15 @@ export default function MaterialFinder() {
   return (
     <section id="materialien" className="border-b border-border">
       <div className="mx-auto max-w-6xl px-6 py-24">
-        <p className="text-sm font-semibold tracking-widest text-accent uppercase">
-          {t.finder.eyebrow}
-        </p>
-        <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-          {t.finder.title}
-        </h2>
-        <p className="mt-4 max-w-xl text-muted">{t.finder.body}</p>
+        <Reveal>
+          <p className="text-sm font-semibold tracking-widest text-accent uppercase">
+            {t.finder.eyebrow}
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight break-words sm:text-4xl">
+            {t.finder.title}
+          </h2>
+          <p className="mt-4 max-w-xl text-muted">{t.finder.body}</p>
+        </Reveal>
 
         <div className="mt-10 flex flex-wrap gap-3">
           {t.finder.materialsList.map((m, i) => (
@@ -64,6 +67,7 @@ export default function MaterialFinder() {
             </div>
           </div>
         </div>
+        <p className="mt-4 text-xs text-muted/80">{t.finder.disclaimer}</p>
       </div>
     </section>
   );

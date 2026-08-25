@@ -14,9 +14,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AQUAJET Dr. Höhne GmbH — Präzisions-Wasserstrahlschneiden",
+  title: {
+    default: "AQUAJET Dr. Höhne GmbH — Präzisions-Wasserstrahlschneiden",
+    template: "%s | AQUAJET Dr. Höhne GmbH",
+  },
   description:
-    "AQUAJET Dr. Höhne GmbH — Präzisions-Wasserstrahlschneiden für Metall und Spezialwerkstoffe. Kalt, sauber, auf den Mikrometer genau.",
+    "AQUAJET Dr. Höhne GmbH fertigt Präzisionsbauteile aus Metall und Spezialwerkstoffen per Wasserstrahlschneiden — kalt, sauber und auf den Mikrometer genau. Jetzt DXF/DWG hochladen und Angebot anfragen.",
+  keywords: [
+    "Wasserstrahlschneiden",
+    "Waterjet Cutting",
+    "Präzisionsschneiden",
+    "Metallbearbeitung",
+    "CNC Wasserstrahl",
+  ],
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

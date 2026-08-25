@@ -15,6 +15,7 @@ interface Dictionary {
     services: string;
     materials: string;
     machines: string;
+    team: string;
     request: string;
   };
   hero: {
@@ -30,6 +31,7 @@ interface Dictionary {
     quality: string;
     maxThickness: string;
     materialsList: { name: string; thickness: string; quality: string }[];
+    disclaimer: string;
   };
   advantages: {
     eyebrow: string;
@@ -40,6 +42,7 @@ interface Dictionary {
     eyebrow: string;
     title: string;
     specs: { label: string; value: string }[];
+    disclaimer: string;
   };
   process: {
     eyebrow: string;
@@ -63,6 +66,17 @@ interface Dictionary {
     submit: string;
     success: string;
   };
+  faq: {
+    eyebrow: string;
+    title: string;
+    items: { question: string; answer: string }[];
+  };
+  team: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    members: { name: string; role: string; bio: string }[];
+  };
   footer: {
     company: string;
     legalLinks: { imprint: string; privacy: string };
@@ -78,6 +92,7 @@ const dictionaries: Record<Lang, Dictionary> = {
       services: "Leistungen",
       materials: "Materialien",
       machines: "Maschinenpark",
+      team: "Team",
       request: "Express-Anfrage",
     },
     hero: {
@@ -119,6 +134,8 @@ const dictionaries: Record<Lang, Dictionary> = {
           quality: "Q3–Q4 nach DIN 2310",
         },
       ],
+      disclaimer:
+        "Richtwerte je nach Bauteilgeometrie und Anforderung — exakte Werte erhalten Sie mit Ihrer Anfrage.",
     },
     advantages: {
       eyebrow: "Vorteile des Wasserstrahlschneidens",
@@ -151,6 +168,8 @@ const dictionaries: Record<Lang, Dictionary> = {
         { label: "Positioniergenauigkeit", value: "±0,02 mm" },
         { label: "Schneidachsen", value: "3- und 5-Achs-Technik" },
       ],
+      disclaimer:
+        "Beispielhafte Kennwerte unseres Maschinenparks — konkrete technische Daten stellen wir auf Anfrage zur Verfügung.",
     },
     process: {
       eyebrow: "So einfach geht's",
@@ -188,13 +207,77 @@ const dictionaries: Record<Lang, Dictionary> = {
       success:
         "Vielen Dank für Ihre Anfrage — wir melden uns innerhalb eines Werktages bei Ihnen.",
     },
+    faq: {
+      eyebrow: "Häufige Fragen",
+      title: "Was Kunden uns am häufigsten fragen",
+      items: [
+        {
+          question:
+            "Können Sie mein Material und meine Wunschdicke schneiden?",
+          answer:
+            "In den meisten Fällen ja — Wasserstrahlschneiden verarbeitet nahezu jedes Material von wenigen Millimetern bis über 200 mm Stärke. Nutzen Sie den Material-Finder für eine erste Einschätzung und schicken Sie uns Ihre genauen Anforderungen für ein verbindliches Angebot.",
+        },
+        {
+          question: "Wie sende ich meine DXF-/DWG-Datei für ein Angebot?",
+          answer:
+            "Laden Sie Ihre Datei einfach im Anfrageformular hoch (DXF, DWG oder STEP) und ergänzen Sie Material, Stückzahl und Wunschtermin. Sie erhalten Ihr Angebot in der Regel innerhalb eines Werktages.",
+        },
+        {
+          question: "Welche Präzision und Toleranzen erreichen Sie?",
+          answer:
+            "Je nach Material und Bauteilgeometrie erreichen wir Positioniergenauigkeiten im Bereich weniger Hundertstel Millimeter. Die exakt erreichbare Toleranz für Ihr Bauteil besprechen wir gerne im Rahmen Ihrer Anfrage.",
+        },
+        {
+          question: "Wie schnell können Sie liefern?",
+          answer:
+            "Die Lieferzeit hängt von Material, Menge und Komplexität ab. Nach Angebotsfreigabe nennen wir Ihnen einen verbindlichen Liefertermin — Express-Anfragen sind auf Wunsch möglich.",
+        },
+      ],
+    },
+    team: {
+      eyebrow: "Unser Team",
+      title: "Die Menschen hinter jedem Schnitt",
+      body: "Erfahrene Ingenieure, Programmierer und Fertigungsspezialisten sorgen dafür, dass jedes Bauteil unsere Präzisionsansprüche erfüllt.",
+      members: [
+        {
+          name: "Dr. Höhne",
+          role: "Gründer & Geschäftsführer",
+          bio: "Verantwortet Strategie und technische Ausrichtung von AQUAJET und steht Kunden bei komplexen Anfragen persönlich zur Seite.",
+        },
+        {
+          name: "[Name einfügen]",
+          role: "Leitung Fertigung",
+          bio: "Verantwortet Produktionsplanung, Maschinenbelegung und die Einhaltung unserer Qualitätsstandards in der Fertigung.",
+        },
+        {
+          name: "[Name einfügen]",
+          role: "Qualitätssicherung",
+          bio: "Prüft Bauteile gegen Zeichnung und Toleranzvorgabe und begleitet unsere Zertifizierungsprozesse.",
+        },
+        {
+          name: "[Name einfügen]",
+          role: "Anwendungstechnik & CAD",
+          bio: "Bereitet Kundendaten für die Fertigung auf und berät zu Schnittstrategie, Materialwahl und Bauteilgeometrie.",
+        },
+        {
+          name: "[Name einfügen]",
+          role: "Vertrieb & Kundenservice",
+          bio: "Erster Ansprechpartner für Angebote, Terminfragen und den reibungslosen Ablauf Ihrer Aufträge.",
+        },
+        {
+          name: "[Name einfügen]",
+          role: "Logistik & Versand",
+          bio: "Koordiniert Verpackung, Versand und termingerechte Zustellung Ihrer Präzisionsbauteile.",
+        },
+      ],
+    },
     footer: {
       company: "AQUAJET Dr. Höhne GmbH",
       legalLinks: {
         imprint: "Impressum",
         privacy: "Datenschutz",
       },
-      certifications: "Zertifiziert nach ISO 9001",
+      certifications: "Zertifizierungen: [hier ergänzen, z. B. ISO 9001]",
       contact: "Kontakt",
       rights: "Alle Rechte vorbehalten.",
     },
@@ -204,6 +287,7 @@ const dictionaries: Record<Lang, Dictionary> = {
       services: "Services",
       materials: "Materials",
       machines: "Machine Park",
+      team: "Team",
       request: "Express Request",
     },
     hero: {
@@ -245,6 +329,8 @@ const dictionaries: Record<Lang, Dictionary> = {
           quality: "Q3–Q4 per DIN 2310",
         },
       ],
+      disclaimer:
+        "Indicative values depending on part geometry and requirements — exact figures are provided with your quote.",
     },
     advantages: {
       eyebrow: "Advantages of Waterjet Cutting",
@@ -277,6 +363,8 @@ const dictionaries: Record<Lang, Dictionary> = {
         { label: "Positioning accuracy", value: "±0.02 mm" },
         { label: "Cutting axes", value: "3- and 5-axis technology" },
       ],
+      disclaimer:
+        "Sample figures for our machine park — we're happy to share exact technical data on request.",
     },
     process: {
       eyebrow: "It's that simple",
@@ -314,13 +402,76 @@ const dictionaries: Record<Lang, Dictionary> = {
       success:
         "Thank you for your request — we'll get back to you within one business day.",
     },
+    faq: {
+      eyebrow: "Frequently Asked Questions",
+      title: "What customers ask us most",
+      items: [
+        {
+          question: "Can you cut my material at my required thickness?",
+          answer:
+            "In most cases, yes — waterjet cutting handles nearly any material from a few millimeters up to 200mm+ thickness. Use the Material Finder for a first estimate, then send us your exact requirements for a binding quote.",
+        },
+        {
+          question: "How do I send my DXF/DWG file for a quote?",
+          answer:
+            "Simply upload your file (DXF, DWG, or STEP) in the request form along with material, quantity, and desired date. You'll typically receive your quote within one business day.",
+        },
+        {
+          question: "What precision and tolerances can you achieve?",
+          answer:
+            "Depending on material and part geometry, we achieve positioning accuracy within a few hundredths of a millimeter. We'll discuss the exact achievable tolerance for your part as part of your request.",
+        },
+        {
+          question: "How fast can you deliver?",
+          answer:
+            "Lead time depends on material, quantity, and complexity. Once your quote is approved, we confirm a binding delivery date — express requests are available on request.",
+        },
+      ],
+    },
+    team: {
+      eyebrow: "Our Team",
+      title: "The people behind every cut",
+      body: "Experienced engineers, programmers, and manufacturing specialists make sure every part meets our precision standards.",
+      members: [
+        {
+          name: "Dr. Höhne",
+          role: "Founder & Managing Director",
+          bio: "Responsible for AQUAJET's strategy and technical direction, and personally supports customers with complex requests.",
+        },
+        {
+          name: "[Add name]",
+          role: "Head of Manufacturing",
+          bio: "Oversees production planning, machine scheduling, and quality standards on the shop floor.",
+        },
+        {
+          name: "[Add name]",
+          role: "Quality Assurance",
+          bio: "Inspects parts against drawings and tolerances, and manages our certification processes.",
+        },
+        {
+          name: "[Add name]",
+          role: "Applications Engineering & CAD",
+          bio: "Prepares customer files for production and advises on cutting strategy, material choice, and part geometry.",
+        },
+        {
+          name: "[Add name]",
+          role: "Sales & Customer Service",
+          bio: "First point of contact for quotes, scheduling, and making sure your order runs smoothly.",
+        },
+        {
+          name: "[Add name]",
+          role: "Logistics & Shipping",
+          bio: "Coordinates packaging, shipping, and on-time delivery of your precision parts.",
+        },
+      ],
+    },
     footer: {
       company: "AQUAJET Dr. Höhne GmbH",
       legalLinks: {
         imprint: "Imprint",
         privacy: "Privacy Policy",
       },
-      certifications: "ISO 9001 Certified",
+      certifications: "Certifications: [add here, e.g. ISO 9001]",
       contact: "Contact",
       rights: "All rights reserved.",
     },

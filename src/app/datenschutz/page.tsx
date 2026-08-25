@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Datenschutz | AQUAJET Dr. Höhne GmbH",
+  title: "Datenschutz",
 };
 
 export default function Datenschutz() {
@@ -11,7 +11,7 @@ export default function Datenschutz() {
     <>
       <Header />
       <main className="mx-auto max-w-3xl px-6 py-24">
-        <h1 className="text-3xl font-semibold tracking-tight">
+        <h1 className="text-3xl font-semibold tracking-tight break-words">
           Datenschutzerklärung
         </h1>
         <p className="mt-4 text-sm text-muted">

@@ -24,7 +24,7 @@ export default function ContactSection() {
         <p className="text-sm font-semibold tracking-widest text-accent uppercase">
           {t.contact.eyebrow}
         </p>
-        <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+        <h2 className="mt-3 text-3xl font-semibold tracking-tight break-words sm:text-4xl">
           {t.contact.title}
         </h2>
         <p className="mt-4 max-w-xl text-muted">{t.contact.body}</p>

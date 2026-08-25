@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Impressum | AQUAJET Dr. Höhne GmbH",
+  title: "Impressum",
 };
 
 export default function Impressum() {
@@ -11,7 +11,7 @@ export default function Impressum() {
     <>
       <Header />
       <main className="mx-auto max-w-3xl px-6 py-24">
-        <h1 className="text-3xl font-semibold tracking-tight">Impressum</h1>
+        <h1 className="text-3xl font-semibold tracking-tight break-words">Impressum</h1>
         <p className="mt-4 text-sm text-muted">
           Platzhalter gemäß § 5 TMG — bitte durch die tatsächlichen
           Unternehmensangaben ersetzen.

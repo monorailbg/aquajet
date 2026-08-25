@@ -1,10 +1,16 @@
 "use client";
 
-import { ArrowRight, UploadCloud } from "lucide-react";
+import { ArrowRight, UploadCloud, FileCode2, Clock, Ruler } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 
+const badges = [
+  { icon: FileCode2, de: "DXF, DWG & STEP", en: "DXF, DWG & STEP" },
+  { icon: Clock, de: "Angebot binnen 24 Std.", en: "Quote within 24 hrs" },
+  { icon: Ruler, de: "Toleranzen nach DIN 2310", en: "Tolerances per DIN 2310" },
+];
+
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   return (
     <section
@@ -23,7 +29,7 @@ export default function Hero() {
         <p className="text-sm font-semibold tracking-widest text-accent uppercase">
           Wasserstrahlschneiden &middot; Waterjet Cutting
         </p>
-        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-6xl">
+        <h1 className="max-w-3xl text-3xl font-semibold tracking-tight break-words text-foreground sm:text-6xl">
           {t.hero.title}
           <br />
           <span className="text-steel">{t.hero.subtitle}</span>
@@ -38,6 +44,18 @@ export default function Hero() {
             {t.hero.cta}
             <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
           </a>
+        </div>
+
+        <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 border-t border-border pt-8">
+          {badges.map((badge) => (
+            <div
+              key={badge.de}
+              className="flex items-center gap-2 text-sm text-muted"
+            >
+              <badge.icon className="h-4 w-4 text-accent" strokeWidth={2} />
+              {lang === "de" ? badge.de : badge.en}
+            </div>
+          ))}
         </div>
       </div>
     </section>
