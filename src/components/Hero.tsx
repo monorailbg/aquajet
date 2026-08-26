@@ -18,7 +18,7 @@ export default function Hero() {
       className="bg-grid relative overflow-hidden border-b border-border"
     >
       <div
-        className="pointer-events-none absolute -top-40 right-[-10%] h-[32rem] w-[32rem] rounded-full opacity-20 blur-3xl"
+        className="pointer-events-none absolute -top-40 right-[-10%] h-[32rem] w-[32rem] rounded-full opacity-[0.12] blur-3xl"
         style={{
           background:
             "radial-gradient(circle, var(--accent) 0%, transparent 70%)",
