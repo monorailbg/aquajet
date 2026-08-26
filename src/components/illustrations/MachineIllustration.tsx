@@ -1,4 +1,11 @@
-export default function MachineIllustration() {
+const highlights = [
+  { x: 34, y: 164, width: 492, height: 82, rx: 10 },
+  { x: 358, y: 72, width: 142, height: 86, rx: 12 },
+  { x: 22, y: 62, width: 516, height: 88, rx: 14 },
+  { x: 204, y: 80, width: 68, height: 76, rx: 10 },
+];
+
+export default function MachineIllustration({ active }: { active: number }) {
   return (
     <svg viewBox="0 0 560 280" fill="none" className="h-full w-full" aria-hidden>
       <defs>
@@ -118,6 +125,25 @@ export default function MachineIllustration() {
         <line x1="520" y1="252" x2="520" y2="260" />
         <line x1="40" y1="256" x2="520" y2="256" />
       </g>
+
+      {/* Interactive highlights, synced with the spec selector */}
+      {highlights.map((h, i) => (
+        <rect
+          key={i}
+          x={h.x}
+          y={h.y}
+          width={h.width}
+          height={h.height}
+          rx={h.rx}
+          fill="var(--accent)"
+          fillOpacity={active === i ? 0.08 : 0}
+          stroke="var(--accent)"
+          strokeWidth="2"
+          strokeDasharray="7 5"
+          strokeOpacity={active === i ? 0.85 : 0}
+          style={{ transition: "fill-opacity 0.3s ease, stroke-opacity 0.3s ease" }}
+        />
+      ))}
     </svg>
   );
 }
