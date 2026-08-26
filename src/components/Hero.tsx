@@ -2,6 +2,7 @@
 
 import { ArrowRight, UploadCloud, FileCode2, Clock, Ruler } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
+import HeroIllustration from "@/components/illustrations/HeroIllustration";
 
 const badges = [
   { icon: FileCode2, de: "DXF, DWG & STEP", en: "DXF, DWG & STEP" },
@@ -25,37 +26,45 @@ export default function Hero() {
         }}
         aria-hidden
       />
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-6 py-28 sm:py-36">
-        <p className="text-sm font-semibold tracking-widest text-accent uppercase">
-          Wasserstrahlschneiden &middot; Waterjet Cutting
-        </p>
-        <h1 className="max-w-3xl text-3xl font-semibold tracking-tight break-words text-foreground sm:text-6xl">
-          {t.hero.title}
-          <br />
-          <span className="text-steel">{t.hero.subtitle}</span>
-        </h1>
-        <p className="max-w-xl text-lg leading-8 text-muted">{t.hero.body}</p>
-        <div>
-          <a
-            href="#anfrage"
-            className="glow-on-hover inline-flex h-13 items-center gap-2.5 rounded-full bg-accent px-7 text-base font-semibold text-background"
-          >
-            <UploadCloud className="h-5 w-5" strokeWidth={2} />
-            {t.hero.cta}
-            <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
-          </a>
+      <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-28 sm:py-36 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div className="flex flex-col gap-8">
+          <p className="text-sm font-semibold tracking-widest text-accent uppercase">
+            Wasserstrahlschneiden &middot; Waterjet Cutting
+          </p>
+          <h1 className="max-w-3xl text-3xl font-semibold tracking-tight break-words text-foreground sm:text-6xl">
+            {t.hero.title}
+            <br />
+            <span className="text-steel">{t.hero.subtitle}</span>
+          </h1>
+          <p className="max-w-xl text-lg leading-8 text-muted">
+            {t.hero.body}
+          </p>
+          <div>
+            <a
+              href="#anfrage"
+              className="glow-on-hover inline-flex h-13 items-center gap-2.5 rounded-full bg-accent px-7 text-base font-semibold text-background"
+            >
+              <UploadCloud className="h-5 w-5" strokeWidth={2} />
+              {t.hero.cta}
+              <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
+            </a>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 border-t border-border pt-8">
+            {badges.map((badge) => (
+              <div
+                key={badge.de}
+                className="flex items-center gap-2 text-sm text-muted"
+              >
+                <badge.icon className="h-4 w-4 text-accent" strokeWidth={2} />
+                {lang === "de" ? badge.de : badge.en}
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 border-t border-border pt-8">
-          {badges.map((badge) => (
-            <div
-              key={badge.de}
-              className="flex items-center gap-2 text-sm text-muted"
-            >
-              <badge.icon className="h-4 w-4 text-accent" strokeWidth={2} />
-              {lang === "de" ? badge.de : badge.en}
-            </div>
-          ))}
+        <div className="rounded-2xl border border-border bg-background-elevated p-6 sm:p-8">
+          <HeroIllustration />
         </div>
       </div>
     </section>

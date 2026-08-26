@@ -3,6 +3,7 @@
 import { Gauge, Target, Move3d, Maximize } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import Reveal from "@/components/Reveal";
+import MachineIllustration from "@/components/illustrations/MachineIllustration";
 
 const icons = [Maximize, Gauge, Target, Move3d];
 
@@ -19,6 +20,12 @@ export default function MachinePark() {
           <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight break-words sm:text-4xl">
             {t.machinePark.title}
           </h2>
+        </Reveal>
+
+        <Reveal className="mt-10">
+          <div className="rounded-2xl border border-border bg-background-elevated p-6 sm:p-8">
+            <MachineIllustration />
+          </div>
         </Reveal>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
