@@ -38,7 +38,7 @@ export default function Footer() {
               <Link href="/#maschinenpark" className="hover:text-foreground">
                 {t.nav.machines}
               </Link>
-              <Link href="/team" className="hover:text-foreground">
+              <Link href="/#team" className="hover:text-foreground">
                 {t.nav.team}
               </Link>
             </div>

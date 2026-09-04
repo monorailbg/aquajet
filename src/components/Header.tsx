@@ -17,7 +17,7 @@ export default function Header() {
     { href: anchor("#leistungen"), label: t.nav.services },
     { href: anchor("#materialien"), label: t.nav.materials },
     { href: anchor("#maschinenpark"), label: t.nav.machines },
-    { href: "/team", label: t.nav.team },
+    { href: anchor("#team"), label: t.nav.team },
   ];
 
   return (
