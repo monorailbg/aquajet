@@ -18,6 +18,7 @@ export default function Header() {
     { href: anchor("#materialien"), label: t.nav.materials },
     { href: anchor("#maschinenpark"), label: t.nav.machines },
     { href: anchor("#team"), label: t.nav.team },
+    { href: anchor("#karriere"), label: t.nav.careers },
   ];
 
   return (

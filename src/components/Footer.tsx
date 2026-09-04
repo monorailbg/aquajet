@@ -41,6 +41,9 @@ export default function Footer() {
               <Link href="/#team" className="hover:text-foreground">
                 {t.nav.team}
               </Link>
+              <Link href="/#karriere" className="hover:text-foreground">
+                {t.nav.careers}
+              </Link>
             </div>
           </div>
 

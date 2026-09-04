@@ -4,6 +4,7 @@ import MaterialFinder from "@/components/MaterialFinder";
 import Advantages from "@/components/Advantages";
 import MachinePark from "@/components/MachinePark";
 import TeamSection from "@/components/TeamSection";
+import CareersSection from "@/components/CareersSection";
 import ProcessSteps from "@/components/ProcessSteps";
 import Faq from "@/components/Faq";
 import ContactSection from "@/components/ContactSection";
@@ -19,6 +20,7 @@ export default function Home() {
         <MaterialFinder />
         <MachinePark />
         <TeamSection />
+        <CareersSection />
         <ProcessSteps />
         <Faq />
         <ContactSection />

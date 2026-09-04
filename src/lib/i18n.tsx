@@ -16,6 +16,7 @@ interface Dictionary {
     materials: string;
     machines: string;
     team: string;
+    careers: string;
     request: string;
   };
   hero: {
@@ -77,6 +78,14 @@ interface Dictionary {
     body: string;
     members: { name: string; role: string; bio: string }[];
   };
+  careers: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    areas: { title: string; description: string }[];
+    cta: string;
+    ctaHint: string;
+  };
   footer: {
     company: string;
     legalLinks: { imprint: string; privacy: string };
@@ -93,6 +102,7 @@ const dictionaries: Record<Lang, Dictionary> = {
       materials: "Materialien",
       machines: "Maschinenpark",
       team: "Team",
+      careers: "Karriere",
       request: "Express-Anfrage",
     },
     hero: {
@@ -271,6 +281,35 @@ const dictionaries: Record<Lang, Dictionary> = {
         },
       ],
     },
+    careers: {
+      eyebrow: "Karriere",
+      title: "Hier bewerben",
+      body: "Wir suchen laufend engagierte Fachkräfte und Nachwuchstalente, die mit uns Präzision auf den Mikrometer genau fertigen wollen. Auch ohne passende Stellenausschreibung freuen wir uns über Ihre Initiativbewerbung.",
+      areas: [
+        {
+          title: "Fertigung & Maschinenbedienung",
+          description:
+            "Bedienung und Programmierung unserer Wasserstrahlanlagen im Schichtbetrieb.",
+        },
+        {
+          title: "Qualitätssicherung",
+          description:
+            "Prüfung von Bauteilen gegen Zeichnung und Toleranzvorgabe.",
+        },
+        {
+          title: "Vertrieb & Kundenservice",
+          description:
+            "Beratung und Betreuung unserer Kunden von der Anfrage bis zur Lieferung.",
+        },
+        {
+          title: "Ausbildung",
+          description:
+            "Einstieg in die Präzisionsfertigung mit fundierter praktischer Ausbildung.",
+        },
+      ],
+      cta: "Jetzt initiativ bewerben",
+      ctaHint: "Bewerbung inkl. Lebenslauf an karriere@aquajet-hoehne.de",
+    },
     footer: {
       company: "AQUAJET Dr. Höhne GmbH",
       legalLinks: {
@@ -288,6 +327,7 @@ const dictionaries: Record<Lang, Dictionary> = {
       materials: "Materials",
       machines: "Machine Park",
       team: "Team",
+      careers: "Careers",
       request: "Express Request",
     },
     hero: {
@@ -464,6 +504,34 @@ const dictionaries: Record<Lang, Dictionary> = {
           bio: "Coordinates packaging, shipping, and on-time delivery of your precision parts.",
         },
       ],
+    },
+    careers: {
+      eyebrow: "Careers",
+      title: "Apply here",
+      body: "We're always looking for skilled tradespeople and new talent who want to help us machine to the micron. Even without a matching job posting, we welcome speculative applications.",
+      areas: [
+        {
+          title: "Manufacturing & Machine Operation",
+          description:
+            "Operating and programming our waterjet systems in shift work.",
+        },
+        {
+          title: "Quality Assurance",
+          description: "Inspecting parts against drawings and tolerances.",
+        },
+        {
+          title: "Sales & Customer Service",
+          description:
+            "Advising and supporting our customers from inquiry to delivery.",
+        },
+        {
+          title: "Apprenticeships",
+          description:
+            "Start a career in precision manufacturing with hands-on training.",
+        },
+      ],
+      cta: "Apply now",
+      ctaHint: "Send your application and CV to karriere@aquajet-hoehne.de",
     },
     footer: {
       company: "AQUAJET Dr. Höhne GmbH",
